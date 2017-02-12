@@ -4,7 +4,7 @@ Donate link:       http://goo.gl/DELyuR
 Tags:              slack, api, chat, notification, woocommerce, payment
 Requires at least: 4.4
 Tested up to:      4.7
-Stable tag:        trunk
+Stable tag:        0.2.0
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,5 +36,8 @@ You can alter the message with `slack_woocommerce_order_status_completed_message
 
 == Changelog ==
 
+= 0.2.0 =
+* Added support for WooCommerce 2.7. This removes notices of calling order properties directly.
+
 = 0.1.0 =
-Initial release
+* Initial release

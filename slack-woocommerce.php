@@ -3,7 +3,7 @@
  * Plugin Name: Slack WooCommerce
  * Plugin URI: http://gedex.web.id/wp-slack/
  * Description: This plugin allows you to send notifications to Slack channels whenever payment in WooCommerce is marked as complete.
- * Version: 0.1.0
+ * Version: 0.2.0
  * Author: Akeda Bagus
  * Author URI: http://gedex.web.id
  * Text Domain: slack-woocommerce
@@ -46,12 +46,11 @@ function wp_slack_woocommerce_order_status_completed( $events ) {
 		// Message to deliver to channel. Returns false will prevent
 		// notification delivery.
 		'message' => function( $order_id ) {
-			$wc = $GLOBALS['woocommerce'];
+			$order = wc_get_order( $order_id );
 
-			require_once $wc->plugin_path() . '/includes/class-wc-order.php';
-			$order = new WC_Order( $order_id );
-
-			$date = $order->completed_date;
+			$date = is_callable( array( $order, 'get_date_completed' ) )
+				? $order->get_date_completed()
+				: $order->completed_date;
 			$url  = add_query_arg(
 				array(
 					'post'   => $order_id,
@@ -60,8 +59,12 @@ function wp_slack_woocommerce_order_status_completed( $events ) {
 				admin_url( 'post.php' )
 			);
 
-			if ( $order->user_id ) {
-				$user_info = get_userdata( $order->user_id );
+			$user_id = is_callable( array( $order, 'get_user_id' ) )
+				? $order->get_user_id()
+				: $order->user_id;
+
+			if ( $user_id ) {
+				$user_info = get_userdata( $user_id );
 			}
 
 			if ( ! empty( $user_info ) ) {
@@ -71,8 +74,15 @@ function wp_slack_woocommerce_order_status_completed( $events ) {
 					$username = esc_html( ucfirst( $user_info->display_name ) );
 				}
 			} else {
-				if ( $order->billing_first_name || $order->billing_last_name ) {
-					$username = trim( $order->billing_first_name . ' ' . $order->billing_last_name );
+				$billing_first_name = is_callable( array( $order, 'get_billing_first_name' ) )
+					? $order->get_billing_first_name()
+					: $order->billing_first_name;
+				$billing_last_name = is_callable( array( $order, 'get_billing_last_name' ) )
+					? $order->get_billing_last_name()
+					: $order->billing_last_name;
+
+				if ( $billing_first_name || $billing_last_name ) {
+					$username = trim( $billing_first_name . ' ' . $billing_last_name );
 				} else {
 					$username = __( 'Guest', 'slack-woocommerce' );
 				}
@@ -94,7 +104,7 @@ function wp_slack_woocommerce_order_status_completed( $events ) {
 				),
 				$order
 			);
-		}
+		},
 	);
 
 	return $events;
