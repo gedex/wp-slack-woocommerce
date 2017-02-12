@@ -1,0 +1,49 @@
+# Copyright (C) 2017 Slack WooCommerce
+# This file is distributed under the same license as the Slack WooCommerce package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Slack WooCommerce 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/slack-"
+"woocommerce\n"
+"POT-Creation-Date: 2017-02-12 17:22:47+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: slack-woocommerce.php:44
+msgid "When a payment in WooCommerce is marked as complete"
+msgstr ""
+
+#: slack-woocommerce.php:77
+msgid "Guest"
+msgstr ""
+
+#: slack-woocommerce.php:89
+msgid ""
+"New payment with amount *%s* has been made by *%s* on *%s*. <%s|See detail>"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Slack WooCommerce"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://gedex.web.id/wp-slack/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"This plugin allows you to send notifications to Slack channels whenever "
+"payment in WooCommerce is marked as complete."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Akeda Bagus"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://gedex.web.id"
+msgstr ""
