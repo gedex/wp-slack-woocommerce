@@ -96,7 +96,7 @@ function wp_slack_woocommerce_order_status_completed( $events ) {
 			// Returns the message to be delivered to Slack.
 			return apply_filters( 'slack_woocommerce_order_status_completed_message',
 				sprintf(
-					__( 'New payment with amount *%s* has been made by *%s* on *%s*. <%s|See detail>', 'slack-woocommerce' ),
+					__( 'New payment with amount *%1$s* has been made by *%2$s* on *%3$s*. <%4$s|See detail>', 'slack-woocommerce' ),
 					$total,
 					$username,
 					$date,
