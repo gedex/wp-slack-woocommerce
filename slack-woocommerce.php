@@ -6,7 +6,7 @@
  * Version: 0.1.0
  * Author: Akeda Bagus
  * Author URI: http://gedex.web.id
- * Text Domain: slack
+ * Text Domain: slack-woocommerce
  * Domain Path: /languages
  * License: GPL v2 or later
  * Requires at least: 4.4
@@ -21,13 +21,15 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
+ *
+ * @package Slack_WooCommerce
  */
 
 /**
  * Adds new event that send notification to Slack channel
  * when a payment is marked as complete.
  *
- * @param  array $events
+ * @param  array $events List of events.
  * @return array
  *
  * @filter slack_get_events
@@ -39,7 +41,7 @@ function wp_slack_woocommerce_order_status_completed( $events ) {
 		'action' => 'woocommerce_order_status_completed',
 
 		// Description appears in integration setting.
-		'description' => __( 'When a payment in WooCommerce is marked as complete', 'slack' ),
+		'description' => __( 'When a payment in WooCommerce is marked as complete', 'slack-woocommerce' ),
 
 		// Message to deliver to channel. Returns false will prevent
 		// notification delivery.
@@ -72,7 +74,7 @@ function wp_slack_woocommerce_order_status_completed( $events ) {
 				if ( $order->billing_first_name || $order->billing_last_name ) {
 					$username = trim( $order->billing_first_name . ' ' . $order->billing_last_name );
 				} else {
-					$username = __( 'Guest', 'woocommerce' );
+					$username = __( 'Guest', 'slack-woocommerce' );
 				}
 			}
 
@@ -84,14 +86,12 @@ function wp_slack_woocommerce_order_status_completed( $events ) {
 			// Returns the message to be delivered to Slack.
 			return apply_filters( 'slack_woocommerce_order_status_completed_message',
 				sprintf(
-					__( 'New payment with amount *%s* has been made by *%s* on *%s*. <%s|See detail>', 'slack' ),
-
+					__( 'New payment with amount *%s* has been made by *%s* on *%s*. <%s|See detail>', 'slack-woocommerce' ),
 					$total,
 					$username,
 					$date,
 					$url
 				),
-
 				$order
 			);
 		}
