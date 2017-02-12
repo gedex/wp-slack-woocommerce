@@ -1,0 +1,24 @@
+type: plugin
+files:
+    src:
+        - '**'
+        - '!node_modules/**'
+        - '!vendor/**'
+        - '!tests/**'
+        - '!test/**'
+        - '!bin/**'
+        - '!build/**'
+        - '!tmp/**'
+        - '!README.md'
+        - '!*.xml'
+    main: slack-woocommerce.php
+    assets:
+        - assets/*.png
+        - assets/*.svg
+gh:
+    repo: gedex/wp-slack-woocommerce
+    username: gedex
+wporg:
+    slug: slack-woocommerce
+    username: akeda
+    buildPath: build
