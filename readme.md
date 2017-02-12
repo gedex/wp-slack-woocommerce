@@ -3,13 +3,13 @@
 
 Send notifications to Slack channels whenever payment in WooCommerce is marked as complete.
 
-**Contributors:** [akeda](http://profiles.wordpress.org/akeda)  
-**Tags:** [slack](http://wordpress.org/plugins/tags/slack), [api](http://wordpress.org/plugins/tags/api), [chat](http://wordpress.org/plugins/tags/chat), [notification](http://wordpress.org/plugins/tags/notification), [woocommerce](http://wordpress.org/plugins/tags/woocommerce), [payment](http://wordpress.org/plugins/tags/payment)  
-**Requires at least:** 3.6  
-**Tested up to:** 3.8.1  
-**Stable tag:** trunk (master)  
-**License:** [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)  
-**Donate link:** http://goo.gl/DELyuR  
+**Contributors:** [akeda](https://profiles.wordpress.org/akeda)<br>
+**Tags:** [slack](https://wordpress.org/plugins/tags/slack), [api](https://wordpress.org/plugins/tags/api), [chat](https://wordpress.org/plugins/tags/chat), [notification](https://wordpress.org/plugins/tags/notification), [woocommerce](https://wordpress.org/plugins/tags/woocommerce), [payment](https://wordpress.org/plugins/tags/payment)<br>
+**Requires at least:** 4.4<br>
+**Tested up to:** 4.7<br>
+**Stable tag:** 0.2.0<br>
+**License:** [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)<br>
+**Donate link:** http://goo.gl/DELyuR<br>
 
 ## Description ##
 
@@ -42,7 +42,10 @@ You can alter the message with `slack_woocommerce_order_status_completed_message
 
 ## Changelog ##
 
+### 0.2.0 ###
+* Added support for WooCommerce 2.7. This removes notices of calling order properties directly.
+
 ### 0.1.0 ###
-Initial release
+* Initial release
 
 
