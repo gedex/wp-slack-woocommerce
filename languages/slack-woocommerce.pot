@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Slack WooCommerce package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Slack WooCommerce 0.1.0\n"
+"Project-Id-Version: Slack WooCommerce 0.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/slack-"
 "woocommerce\n"
-"POT-Creation-Date: 2017-02-12 17:22:47+00:00\n"
+"POT-Creation-Date: 2017-02-12 17:50:40+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,13 +17,14 @@ msgstr ""
 msgid "When a payment in WooCommerce is marked as complete"
 msgstr ""
 
-#: slack-woocommerce.php:77
+#: slack-woocommerce.php:87
 msgid "Guest"
 msgstr ""
 
-#: slack-woocommerce.php:89
+#: slack-woocommerce.php:99
 msgid ""
-"New payment with amount *%s* has been made by *%s* on *%s*. <%s|See detail>"
+"New payment with amount *%1$s* has been made by *%2$s* on *%3$s*. <%4$s|See "
+"detail>"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
